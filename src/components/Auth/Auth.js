@@ -11,6 +11,12 @@ class Auth extends React.Component {
     firebase.auth().signInWithPopup(provider);
   }
 
-  
-
+  render() {
+    return (
+      <div className="Auth">
+        <button className="btn btn-danger" onClick={this.loginClickEvent}>Log In With Google</button>
+      </div>
+    );
+  }
 }
+export default Auth;

@@ -1,9 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
+import firebase from 'firebase/app';
+
+import firebaseConnection from '../helpers/data/connection';
+import Auth from '../components/Auth/Auth';
+
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+firebaseConnection();
+
+class App extends React.Component {
+  state = {
+    authed: false,
+  }
+
+  componentDidMount() {
+    this.removeListener = firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState ({ authed: true });
+        } else {
+          this.setState({ authed: false });
+        }
+      });
+    }
+
+    componentWillUnmount() {
+      this.removeListener();
+    }
+
+    renderView = () => {
+      const { authed } = this.state;
+      if (!authed) {
+        return(<Auth />);
+      }
+    }
+
+    return (
+      <div className="App">
+      <MyNavBar authed={authed} />
+      {
+        this.renderView()
+      }
+    )
+
+  }
+
   return (
     <div className="App">
       <header className="App-header">
