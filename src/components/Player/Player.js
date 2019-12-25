@@ -9,6 +9,13 @@ import './Player.scss';
 class Player extends React.Component {
   static propTypes = {
     players: playerShape.playerShape,
+    deleteSinglePlayer: PropTypes.func,
+  }
+
+  deleteSinglePlayerEvent = (e) => {
+    e.preventDefault();
+    const { deleteSinglePlayer, player } = this.props;
+    deleteSinglePlayer(player.id);
   }
 
   render() {
@@ -22,7 +29,7 @@ class Player extends React.Component {
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
             <div className="d-flex justify-content-between">
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-danger" onClick={this.deleteSinglePlayerEvent}>X</button>
             <button className="btn btn-info">Edit</button>
             </div>
         </div>

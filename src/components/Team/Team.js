@@ -26,10 +26,18 @@ class Team extends React.Component {
       .catch((errFromPlayersContainer) => console.error({ errFromPlayersContainer }));
   }
 
+  deleteSinglePlayer = (playerId) => {
+    playerData.deletePlayerById(playerId)
+      .then(() => {
+        this.getPlayers();
+      })
+      .catch((errorFromDeletePin) => console.error({ errorFromDeletePin }));
+  }
+
   render() {
     return (
       <div className="d-flex flex-wrap justify-content-between">
-        {this.state.players.map((player) => (<Player key={player.id} player={player}/>))}
+        {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer}/>))}
       </div>
     );
   }
