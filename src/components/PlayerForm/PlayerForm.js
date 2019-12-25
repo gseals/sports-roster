@@ -6,6 +6,8 @@ import playerShape from '../../helpers/propz/playerShape';
 
 import authData from '../../helpers/data/authData';
 
+import './PlayerForm.scss';
+
 class PlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
@@ -17,7 +19,7 @@ class PlayerForm extends React.Component {
     playerImage: '',
   }
 
-  savePlayerEvnt = (e) => {
+  savePlayerEvent = (e) => {
     const { addPlayer } = this.props;
 
     e.preventDefault();
@@ -31,43 +33,58 @@ class PlayerForm extends React.Component {
     this.setState({ playerName: '', playerPosition: '', playerImage: '' });
   }
 
+  nameChange = (e) => {
+    e.preventDefault();
+    this.setState({ playerName: e.target.value });
+  }
+
+  positionChange = (e) => {
+    e.preventDefault();
+    this.setState({ playerPosition: e.target.value });
+  }
+
+  imageChange = (e) => {
+    e.preventDefault();
+    this.setState({ playerImage: e.target.value });
+  }
+
   render() {
     return (
-        <form className='col-6 offset-3 BoardForm'>
+        <form className='col-6 offset-3 PlayerForm'>
         <div className="form-group">
-          <label htmlFor="order-name">Player Name:</label>
+          <label className="text" htmlFor="player-name">Player Name:</label>
           <input
             type="text"
             className="form-control"
-            id="board-name"
+            id="player-name"
             placeholder="Enter player name"
             value={this.state.playerName}
             onChange={this.nameChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="description-name">Player Position:</label>
+          <label className="text" htmlFor="player-position">Player Position:</label>
           <input
             type="text"
             className="form-control"
-            id="board-description"
+            id="player-position"
             placeholder="Enter player position"
             value={this.state.playerPosition}
-            onChange={this.descriptionChange}
+            onChange={this.positionChange}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="description-name">Player Image:</label>
+          <label className="text" htmlFor="player-image">Player Image:</label>
           <input
             type="text"
             className="form-control"
-            id="board-description"
+            id="player-image"
             placeholder="Enter player image"
             value={this.state.playerImage}
-            onChange={this.descriptionChange}
+            onChange={this.imageChange}
           />
         </div>
-        <button className="btn btn-secondary" onClick={this.saveBoardEvent}>Save Board</button>
+        <button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>
         </form>
     );
   }

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import Player from '../Player/Player';
 
+import PlayerForm from '../PlayerForm/PlayerForm';
+
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 
@@ -34,9 +36,19 @@ class Team extends React.Component {
       .catch((errorFromDeletePin) => console.error({ errorFromDeletePin }));
   }
 
+  addPlayer = (newPlayer) => {
+    playerData.createNewPlayer(newPlayer)
+      .then(() => {
+        this.getPlayers();
+      })
+      .catch((errorFromSavePlayer) => console.error({ errorFromSavePlayer }));
+  }
+
   render() {
     return (
       <div className="d-flex flex-wrap justify-content-between">
+        {/* <button>Add a new player</button> */}
+        <PlayerForm addPlayer={this.addPlayer} />
         {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer}/>))}
       </div>
     );
