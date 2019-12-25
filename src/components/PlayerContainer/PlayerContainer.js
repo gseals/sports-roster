@@ -27,7 +27,7 @@ class PlayerContainer extends React.Component {
   render() {
     return (
       <div>
-        <Player />
+        {this.state.players.map((player) => (<Player key={player.id} player={player}/>))}
       </div>
     );
   }

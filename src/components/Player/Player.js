@@ -17,9 +17,9 @@ class Player extends React.Component {
     return (
       <div className="Player col-4">
         <div className="card">
-        {/* <img src={player.imageUrl} className="card-img-top" alt="{player.name}"/> */}
+        <img src={player.imageUrl} className="card-img-top" alt="{player.name}"/>
           <div className="card-body">
-            {/* <h5 className="card-title">{player.name}</h5> */}
+            <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
         </div>
       </div>
