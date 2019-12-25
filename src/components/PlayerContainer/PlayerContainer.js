@@ -2,10 +2,16 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import Player from '../Player/Player';
+
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 
 class PlayerContainer extends React.Component {
+  state = {
+    players: [],
+  }
+
   componentDidMount() {
     this.getPlayers();
   }
