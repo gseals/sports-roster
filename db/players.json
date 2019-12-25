@@ -1,8 +1,44 @@
 {
   "player1": {
-    "imageUrl": "http://static.nfl.com/static/content/public/static/img/fantasy/transparent/200x200/TAN298716.png",
-    "name": "Ryan Tannehill",
-    "position": "QB",
-    "uid": ""
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/dQCAG-HsKYSD0_j9ZG9mGTj-cU8=/0x0:5261x3507/1200x800/filters:focal(2211x1334:3051x2174)/cdn.vox-cdn.com/uploads/chorus_image/image/62178213/usa_today_11517435.0.jpg",
+    "name": "Pekke Rinne",
+    "position": "Goalie",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player2": {
+    "imageUrl": "https://www.si.com/.image/t_share/MTY4MDI4OTIyODE2MzA4NjA4/predators-filip-forsberg-suspended-vesey-hitjpg.jpg",
+    "name": "Filip Forsberg",
+    "position": "Left Wing",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player3": {
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/D1jBkM1F9mnS35nT3DpwVdWXh90=/0x0:3872x2835/1200x800/filters:focal(1638x1001:2256x1619)/cdn.vox-cdn.com/uploads/chorus_image/image/61904539/usa_today_10765856.0.jpg",
+    "name": "Matt Duchene",
+    "position": "Center",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player4": {
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/aB-Xj39TKSesIQVQ_gdrODTVu90=/0x0:2432x1714/1200x800/filters:focal(1022x1520:1410x1908)/cdn.vox-cdn.com/uploads/chorus_image/image/53284777/usa_today_9869472.0.jpg",
+    "name": "Viktor Arvidsson",
+    "position": "Right Wing",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player5": {
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/H5OhmviepIj0D6zncRUOo2V7OWk=/0x0:4130x2754/1200x800/filters:focal(1735x1047:2395x1707)/cdn.vox-cdn.com/uploads/chorus_image/image/55684375/usa_today_10079001.0.jpg",
+    "name": "Matt Irwin",
+    "position": "Left Defence",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player6": {
+    "imageUrl": "https://cdn.vox-cdn.com/thumbor/Nl1rd7SgibRFtf9emmhwacTi2Jw=/0x0:3229x2336/1200x800/filters:focal(1064x412:1580x928)/cdn.vox-cdn.com/uploads/chorus_image/image/60147951/usa_today_10610682.0.jpg",
+    "name": "Yannick Weber",
+    "position": "Right Defence",
+    "uid": "eMJO91Aj5LaOMc4xlNCsJLROSe23"
+  },
+  "player7": {
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJ8B-HJFGXb4DmGdJdzK0sXtux5AHKxWXdHPyux9epmlFGUJDBDA&s",
+    "name": "Jimmy Howard",
+    "position": "Goalie",
+    "uid": "12345"
   }
 }
