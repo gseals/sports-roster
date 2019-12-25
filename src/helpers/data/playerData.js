@@ -7,7 +7,6 @@ const getPlayersByUid = (uid) => new Promise((resolve, reject) => {
   axios.get(`${baseUrl}/players.json?orderBy="uid"&equalTo="${uid}"`)
     .then((result) => {
       const allPlayers = result.data;
-      console.log(allPlayers);
       const players = [];
       if (allPlayers != null) {
         Object.keys(allPlayers).forEach((fbId) => {
@@ -21,4 +20,6 @@ const getPlayersByUid = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
-export default { getPlayersByUid };
+const deletePlayerById = (playerId) => axios.delete(`${baseUrl}/players/${playerId}.json`);
+
+export default { getPlayersByUid, deletePlayerById };

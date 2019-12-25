@@ -7,7 +7,9 @@ import Player from '../Player/Player';
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 
-class PlayerContainer extends React.Component {
+import './Team.scss';
+
+class Team extends React.Component {
   state = {
     players: [],
   }
@@ -24,13 +26,21 @@ class PlayerContainer extends React.Component {
       .catch((errFromPlayersContainer) => console.error({ errFromPlayersContainer }));
   }
 
+  deleteSinglePlayer = (playerId) => {
+    playerData.deletePlayerById(playerId)
+      .then(() => {
+        this.getPlayers();
+      })
+      .catch((errorFromDeletePin) => console.error({ errorFromDeletePin }));
+  }
+
   render() {
     return (
-      <div>
-        {this.state.players.map((player) => (<Player key={player.id} player={player}/>))}
+      <div className="d-flex flex-wrap justify-content-between">
+        {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer}/>))}
       </div>
     );
   }
 }
 
-export default PlayerContainer;
+export default Team;
