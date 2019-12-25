@@ -11,7 +11,8 @@ body {
 }
 
 .App {
-  background-color: $teal;
+  background-image: url('../assets/rink.jpg');
+  background-size: cover;
 }
 
 code {
