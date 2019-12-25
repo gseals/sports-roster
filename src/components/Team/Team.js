@@ -7,7 +7,9 @@ import Player from '../Player/Player';
 import authData from '../../helpers/data/authData';
 import playerData from '../../helpers/data/playerData';
 
-class PlayerContainer extends React.Component {
+import './Team.scss';
+
+class Team extends React.Component {
   state = {
     players: [],
   }
@@ -26,11 +28,11 @@ class PlayerContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="d-flex flex-wrap justify-content-between">
         {this.state.players.map((player) => (<Player key={player.id} player={player}/>))}
       </div>
     );
   }
 }
 
-export default PlayerContainer;
+export default Team;

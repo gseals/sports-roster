@@ -21,6 +21,10 @@ class Player extends React.Component {
           <div className="card-body">
             <h5 className="card-title">{player.name}</h5>
             <p className="card-text">{player.position}</p>
+            <div className="d-flex justify-content-between">
+            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-info">Edit</button>
+            </div>
         </div>
       </div>
     </div>

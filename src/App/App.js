@@ -5,7 +5,7 @@ import firebaseConnection from '../helpers/data/connection';
 import Auth from '../components/Auth/Auth';
 import MyNavBar from '../components/MyNavBar/MyNavBar';
 
-import PlayerContainer from '../components/PlayerContainer/PlayerContainer';
+import Team from '../components/Team/Team';
 
 import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,7 +36,7 @@ class App extends React.Component {
     if (!authed) {
       return (<Auth />);
     }
-    return (<PlayerContainer />);
+    return (<Team />);
   }
 
   render() {
