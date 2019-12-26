@@ -11,12 +11,28 @@ import './PlayerForm.scss';
 class PlayerForm extends React.Component {
   static propTypes = {
     addPlayer: PropTypes.func,
+    playerToEdit: playerShape.playerShape,
+    editMode: PropTypes.bool,
+    updatePlayers: PropTypes.func,
   }
 
   state = {
     playerName: '',
     playerPosition: '',
     playerImage: '',
+  }
+
+  componentDidMount() {
+    const { playerToEdit, editMode } = this.props;
+    if (editMode) {
+      this.setState({ playerName: playerToEdit.name, playerPosition: playerToEdit.position, playerImage: playerToEdit.image });
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.propss.editMode) {
+      this.setState({ playerName: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, playerImage: this.props.playerToEdit.image });
+    }
   }
 
   savePlayerEvent = (e) => {
