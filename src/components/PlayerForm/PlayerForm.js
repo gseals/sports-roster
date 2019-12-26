@@ -25,12 +25,12 @@ class PlayerForm extends React.Component {
   componentDidMount() {
     const { playerToEdit, editMode } = this.props;
     if (editMode) {
-      this.setState({ playerName: playerToEdit.name, playerPosition: playerToEdit.position, playerImage: playerToEdit.image });
+      this.setState({ playerName: playerToEdit.name, playerPosition: playerToEdit.position, playerImage: playerToEdit.imageUrl });
     }
   }
 
   componentDidUpdate(prevProps) {
-    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.propss.editMode) {
+    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
       this.setState({ playerName: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, playerImage: this.props.playerToEdit.image });
     }
   }
@@ -49,6 +49,18 @@ class PlayerForm extends React.Component {
     this.setState({ playerName: '', playerPosition: '', playerImage: '' });
   }
 
+  updatePlayerEvent = (e) => {
+    e.preventDefault();
+    const { updatePlayer, playerToEdit } = this.props;
+    const updatedPlayer = {
+      playerName: this.state.playerName,
+      playerPosition: this.state.playerPosition,
+      playerImage: this.state.playerImage,
+      uid: playerToEdit.uid,
+    };
+    updatePlayer(playerToEdit.id, updatedPlayer);
+  }
+
   nameChange = (e) => {
     e.preventDefault();
     this.setState({ playerName: e.target.value });
@@ -65,6 +77,8 @@ class PlayerForm extends React.Component {
   }
 
   render() {
+    const { editMode } = this.props;
+
     return (
         <form className='col-6 offset-3 PlayerForm'>
         <div className="form-group">
@@ -100,7 +114,10 @@ class PlayerForm extends React.Component {
             onChange={this.imageChange}
           />
         </div>
-        <button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>
+        {
+          (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
+            : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
+        }
         </form>
     );
   }
