@@ -76,8 +76,6 @@ class PlayerForm extends React.Component {
     this.setState({ playerImage: e.target.value });
   }
 
-
-  
   render() {
     const { editMode } = this.props;
 

@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Player from '../Player/Player';
-
 import PlayerForm from '../PlayerForm/PlayerForm';
 
 import authData from '../../helpers/data/authData';
