@@ -10,6 +10,15 @@ class Player extends React.Component {
   static propTypes = {
     players: playerShape.playerShape,
     deleteSinglePlayer: PropTypes.func,
+    setEditMode: PropTypes.func,
+    setPlayerToEdit: PropTypes.func,
+  }
+
+  setEditMode = (e) => {
+    const { setEditMode, setPlayerToEdit, players } = this.props;
+    e.preventDefault();
+    setEditMode(true);
+    setPlayerToEdit(players);
   }
 
   deleteSinglePlayerEvent = (e) => {
@@ -30,7 +39,7 @@ class Player extends React.Component {
             <p className="card-text">{player.position}</p>
             <div className="d-flex justify-content-between">
             <button className="btn btn-danger" onClick={this.deleteSinglePlayerEvent}>X</button>
-            <button className="btn btn-info">Edit</button>
+            <button className="btn btn-info" onClick={this.setEditMode}>Edit</button>
             </div>
         </div>
       </div>
