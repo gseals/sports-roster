@@ -17,45 +17,45 @@ class PlayerForm extends React.Component {
   }
 
   state = {
-    playerName: '',
-    playerPosition: '',
-    playerImage: '',
+    name: '',
+    position: '',
+    imageUrl: '',
   }
 
   componentDidMount() {
     const { playerToEdit, editMode } = this.props;
     if (editMode) {
-      this.setState({ playerName: playerToEdit.name, playerPosition: playerToEdit.position, playerImage: playerToEdit.imageUrl });
+      this.setState({ name: playerToEdit.name, position: playerToEdit.position, imageUrl: playerToEdit.imageUrl });
     }
   }
 
-  componentDidUpdate(prevProps) {
-    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
-      this.setState({ playerName: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, playerImage: this.props.playerToEdit.image });
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
+  //     this.setState({ name: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, imageUrl: this.props.playerToEdit.image });
+  //   }
+  // }
 
   savePlayerEvent = (e) => {
     const { addPlayer } = this.props;
 
     e.preventDefault();
     const newPlayer = {
-      name: this.state.playerName,
-      position: this.state.playerPosition,
-      imageUrl: this.state.playerImage,
+      name: this.state.name,
+      position: this.state.position,
+      imageUrl: this.state.imageUrl,
       uid: authData.getUid(),
     };
     addPlayer(newPlayer);
-    this.setState({ playerName: '', playerPosition: '', playerImage: '' });
+    this.setState({ name: '', position: '', imageUrl: '' });
   }
 
   updatePlayerEvent = (e) => {
     e.preventDefault();
     const { updatePlayer, playerToEdit } = this.props;
     const updatedPlayer = {
-      playerName: this.state.playerName,
-      playerPosition: this.state.playerPosition,
-      playerImage: this.state.playerImage,
+      name: this.state.name,
+      position: this.state.position,
+      imageUrl: this.state.imageUrl,
       uid: playerToEdit.uid,
     };
     updatePlayer(playerToEdit.id, updatedPlayer);
@@ -63,17 +63,17 @@ class PlayerForm extends React.Component {
 
   nameChange = (e) => {
     e.preventDefault();
-    this.setState({ playerName: e.target.value });
+    this.setState({ name: e.target.value });
   }
 
   positionChange = (e) => {
     e.preventDefault();
-    this.setState({ playerPosition: e.target.value });
+    this.setState({ position: e.target.value });
   }
 
   imageChange = (e) => {
     e.preventDefault();
-    this.setState({ playerImage: e.target.value });
+    this.setState({ imageUrl: e.target.value });
   }
 
   render() {
@@ -88,7 +88,7 @@ class PlayerForm extends React.Component {
             className="form-control"
             id="player-name"
             placeholder="Enter player name"
-            value={this.state.playerName}
+            value={this.state.name}
             onChange={this.nameChange}
           />
         </div>
@@ -99,7 +99,7 @@ class PlayerForm extends React.Component {
             className="form-control"
             id="player-position"
             placeholder="Enter player position"
-            value={this.state.playerPosition}
+            value={this.state.position}
             onChange={this.positionChange}
           />
         </div>
@@ -110,7 +110,7 @@ class PlayerForm extends React.Component {
             className="form-control"
             id="player-image"
             placeholder="Enter player image"
-            value={this.state.playerImage}
+            value={this.state.imageUrl}
             onChange={this.imageChange}
           />
         </div>

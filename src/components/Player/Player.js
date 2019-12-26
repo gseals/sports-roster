@@ -8,17 +8,17 @@ import './Player.scss';
 
 class Player extends React.Component {
   static propTypes = {
-    players: playerShape.playerShape,
+    player: playerShape.playerShape,
     deleteSinglePlayer: PropTypes.func,
     setEditMode: PropTypes.func,
     setPlayerToEdit: PropTypes.func,
   }
 
   setEditMode = (e) => {
-    const { setEditMode, setPlayerToEdit, players } = this.props;
+    const { setEditMode, setPlayerToEdit, player } = this.props;
     e.preventDefault();
     setEditMode(true);
-    setPlayerToEdit(players);
+    setPlayerToEdit(player);
   }
 
   deleteSinglePlayerEvent = (e) => {
