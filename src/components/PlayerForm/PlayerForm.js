@@ -14,6 +14,7 @@ class PlayerForm extends React.Component {
     playerToEdit: playerShape.playerShape,
     editMode: PropTypes.bool,
     updatePlayers: PropTypes.func,
+    setCancelPlayerUpdate: PropTypes.func,
   }
 
   state = {
@@ -29,11 +30,11 @@ class PlayerForm extends React.Component {
     }
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
-  //     this.setState({ name: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, imageUrl: this.props.playerToEdit.image });
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if ((prevProps.playerToEdit.id !== this.props.playerToEdit.id) && this.props.editMode) {
+      this.setState({ name: this.props.playerToEdit.name, playerPoition: this.props.playerToEdit.position, imageUrl: this.props.playerToEdit.image });
+    }
+  }
 
   savePlayerEvent = (e) => {
     const { addPlayer } = this.props;
@@ -118,6 +119,7 @@ class PlayerForm extends React.Component {
           (editMode) ? (<button className="btn btn-warning" onClick={this.updatePlayerEvent}>Update Player</button>)
             : (<button className="btn btn-secondary" onClick={this.savePlayerEvent}>Save Player</button>)
         }
+        <button className="btn btn-success" onClick={this.setCancelPlayerUpdate}>Cancel</button>
         </form>
     );
   }
