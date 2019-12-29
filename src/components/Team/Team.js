@@ -68,12 +68,20 @@ class Team extends React.Component {
     this.setState({ showPlayerForm: true });
   }
 
+  setCancelPlayerUpdate = () => {
+    this.setState({ showPlayerForm: false });
+  }
+
   render() {
     return (
-      <div className="d-flex flex-wrap justify-content-between">
-        <button onClick={this.setShowPlayerForm}>Add a new player</button>
-      {this.state.showPlayerForm && <PlayerForm addPlayer={this.addPlayer} editMode={this.state.editMode} playerToEdit={this.state.playerToEdit} updatePlayer={this.updatePlayer} /> }
+      <div>
+        <button className="btn btn-outline-info" onClick={this.setShowPlayerForm}>Add a new player</button>
+        <div className="d-flex flex-wrap justify-content-between">
+      {this.state.showPlayerForm
+      && <PlayerForm
+      addPlayer={this.addPlayer} editMode={this.state.editMode} playerToEdit={this.state.playerToEdit} updatePlayer={this.updatePlayer} setCancelPlayerUpdate={this.setCancelPlayerCreate} /> }
   {this.state.players.map((player) => (<Player key={player.id} player={player} deleteSinglePlayer={this.deleteSinglePlayer} setEditMode={this.setEditMode} setPlayerToEdit={this.setPlayerToEdit} />))}
+      </div>
       </div>
     );
   }
