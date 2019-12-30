@@ -39,7 +39,7 @@ Update Player
 
 ## Deployed Site/Demo
 
-- ![Coming Soon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHy2SwMRuJKl76xKHxLzqvhAMsFlRn38v9Hxdg8FPibmOcOlA&s)
+![Coming Soon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHy2SwMRuJKl76xKHxLzqvhAMsFlRn38v9Hxdg8FPibmOcOlA&s)
 
 ## Contributors
 
