@@ -75,7 +75,7 @@ class Team extends React.Component {
   render() {
     return (
       <div>
-        <button className="btn btn-outline-info" onClick={this.setShowPlayerForm}>Add a new player</button>
+        <button className="btn btn-info" onClick={this.setShowPlayerForm}>Add a new player</button>
         <div className="d-flex flex-wrap justify-content-between">
       {this.state.showPlayerForm
       && <PlayerForm
