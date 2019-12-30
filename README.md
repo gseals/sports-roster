@@ -2,7 +2,7 @@
 
 ## Description
 
-An application that allows a logged in user to create player cards for the team of their choice. 
+An application that allows a logged in user to create player cards for the team of their choice. These are the Nashville Predators. These are their stories.
 
 ## Technologies Used
 
@@ -18,16 +18,16 @@ An application that allows a logged in user to create player cards for the team 
 ## Screenshot(s)
 
 Logged Out View
-![Logged Out View]()
+![Logged Out View](https://raw.githubusercontent.com/gseals/sports-roster/master/screenshots/loggedOut.png)
 
 Logged In View
-![Logged In View]()
+![Logged In View](https://raw.githubusercontent.com/gseals/sports-roster/master/screenshots/loggedIn.png)
 
 Add Player
-![Add Player]()
+![Add Player](https://raw.githubusercontent.com/gseals/sports-roster/master/screenshots/addNewPlayer.png)
 
 Update Player
-![Update Player]()
+![Update Player](https://raw.githubusercontent.com/gseals/sports-roster/master/screenshots/updatePlayer.png)
 
 ## Instructions for how to run the project
 
