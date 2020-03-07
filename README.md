@@ -1,5 +1,7 @@
 # Sports Roster
 
+This application created using [Create React App](https://github.com/facebook/create-react-app)
+
 ## Description
 
 An application that allows a logged in user to create player cards for the team of their choice. These are the Nashville Predators. These are their stories.
@@ -39,7 +41,7 @@ Update Player
 
 ## Deployed Site/Demo
 
-![Coming Soon](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHy2SwMRuJKl76xKHxLzqvhAMsFlRn38v9Hxdg8FPibmOcOlA&s)
+[Preview the app here](https://sports-roster-10562.firebaseapp.com)
 
 ## Contributors
 
